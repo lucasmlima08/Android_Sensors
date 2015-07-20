@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Sensors Droid</string>
+
+    <string name="titleMain">Sensors</string>
+
+    <!-- Sensors -->
+    <string name="gyroscope">Acceleration Angle</string>
+    <string name="linearAcceleration">Axis Acceleration</string>
+    <string name="magneticField">Magnetic Field</string>
+    <string name="stepCounter">Step Counter</string>
+    <string name="proximity">Approach Detector</string>
+    <string name="significantMotion">Motion Detector</string>
+    <string name="stepDetector">Steps Detector</string>
+    <string name="gravity">Gravitational Force</string>
+    <string name="heartRate">Heart Rate</string>
+    <string name="accelerometer">Inclination of Axis</string>
+    <string name="light">Light Intensity</string>
+    <string name="pressure">Ambient Pressure</string>
+    <string name="ambientTemperature">Ambient Temperature</string>
+    <string name="relativeHumidity">Relative Humidity</string>
+
+    <!-- Descriptions -->
+    <string name="gyroscopeD">Measures a device\'s rate of rotation in rad/s around each of the three
+        physical axes (x, y, and z).</string>
+    <string name="linearAccelerationD">Measures the acceleration force in m/s² applied to the device
+        in the X, Y and Z.</string>
+    <string name="magneticFieldD">Measures the ambient geomagnetic field for all three physical axes
+        (x, y, z) in μT.</string>
+    <string name="stepCounterD">Performs the step count.</string>
+    <string name="proximityD">Detects the approach of an object relative to the device\'s screen.</string>
+    <string name="significantMotionD">Detects movements performed on the device.</string>
+    <string name="stepDetectorD">Steps detector.</string>
+    <string name="gravityD">Measures the force of gravity in m/s² that is applied to a device on all
+        three physical axes (x, y, z).</string>
+    <string name="heartRateD">Heart rate meter.</string>
+    <string name="accelerometerD">Measures the slope of strength in m/s² applied to device on the X,
+        Y and Z including the force of gravity.</string>
+    <string name="lightD">Measures the ambient light level (illumination) in lx.</string>
+    <string name="pressureD">Measures the ambient air pressure in hPa or mbar.</string>
+    <string name="ambientTemperatureD">Measures the temperature of the device in degrees Celsius(°C).</string>
+    <string name="relativeHumidityD">Measures the relative ambient humidity in percent(%).</string>
+
+    <string name="detect">Detected!</string>
+    <string name="notDetect">No signal!</string>
+
+    <string name="steps">steps</string>
+
+</resources>

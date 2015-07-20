@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Sensores Droid</string>
+
+    <string name="titleMain">Sensores</string>
+
+    <!-- Sensors -->
+    <string name="gyroscope">Aceleración Angular</string>
+    <string name="linearAcceleration">Eje Aceleración</string>
+    <string name="magneticField">Campo Magnético</string>
+    <string name="stepCounter">Contador de Pasos</string>
+    <string name="proximity">Detector de Enfoque</string>
+    <string name="significantMotion">Detección de Movimiento</string>
+    <string name="stepDetector">Detector de Pasos</string>
+    <string name="gravity">Fuerza Gravitacional</string>
+    <string name="heartRate">Ritmo Cardíaco</string>
+    <string name="accelerometer">Eje de Inclinación</string>
+    <string name="light">Intensidad de Luz</string>
+    <string name="pressure">Presión Ambiente</string>
+    <string name="ambientTemperature">Temperatura Ambiente</string>
+    <string name="relativeHumidity">Humedad Relativa</string>
+
+    <!-- Descriptions -->
+    <string name="gyroscopeD">Mide la velocidad de rotación en rad/s del dispositivo alrededor de los ejes X, Y y Z.</string>
+    <string name="linearAccelerationD">Mide la fuerza de la aceleración en m/s² aplicada en lo dispositivo
+         en los ejes X, Y y Z.</string>
+    <string name="magneticFieldD">Mide el campo geomagnético ambiente en μT en los ejes X, Y y Z.</string>
+    <string name="stepCounterD">Realiza el recuento de pasos.</string>
+    <string name="proximityD">Detecta un objeto que se aproxima en la pantalla del dispositivo.</string>
+    <string name="significantMotionD">Detecta movimientos realizados en el dispositivo.</string>
+    <string name="stepDetectorD">Detector de Pasos.</string>
+    <string name="gravityD">Mide la fuerza de la gravedad en m/s² aplican al dispositivo en la X, Y y Z.</string>
+    <string name="heartRateD">Mide la frecuencia cardíaca.</string>
+    <string name="accelerometerD">Mide la fuerza de inclinación en m/s² aplican al dispositivo en la X, Y y Z
+        incluyendo la fuerza de la gravedad.</string>
+    <string name="lightD">Mide el nivel de luz ambiente en lx.</string>
+    <string name="pressureD">Mide la presión del aire ambiente en hPa o mbar.</string>
+    <string name="ambientTemperatureD">Mide la temperatura ambiente en gado Celcius(ºC).</string>
+    <string name="relativeHumidityD">Mide la humedad relativa del ambiente en porcentaje(%).</string>
+
+    <string name="detect">Detectado!</string>
+    <string name="notDetect">Sin señal!</string>
+
+    <string name="steps">pasos</string>
+
+</resources>

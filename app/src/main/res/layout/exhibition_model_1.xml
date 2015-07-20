@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExhibitionModel1"
+    android:background="#ffe7e8e6"
+    android:padding="15dp">
+
+    <TextView android:text="Title" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ff000000"
+        android:textSize="@dimen/titleScreen"
+        android:id="@+id/title_m1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="description"
+        android:id="@+id/infoSensor_m1"
+        android:textSize="@dimen/description"
+        android:singleLine="false"
+        android:padding="15dp"
+        android:textColor="#ff5a605e"
+        android:textAlignment="center"
+        android:layout_below="@+id/title_m1"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X: 00.00"
+            android:id="@+id/m1_x"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ff000000"
+            android:textSize="@dimen/values"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Y: 00.00"
+            android:id="@+id/m1_y"
+            android:layout_below="@+id/infoSensor_m2"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ff000000"
+            android:textSize="@dimen/values"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Z: 00.00"
+            android:id="@+id/m1_z"
+            android:layout_below="@+id/m2"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ff000000"
+            android:textSize="@dimen/values"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+</RelativeLayout>
