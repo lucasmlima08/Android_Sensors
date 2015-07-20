@@ -20,7 +20,7 @@ mas ele lista apenas os sensores suportados pelo dispositivo.
 - Intensidade de Luz (Light)
 - Pressão Ambiente (Pressure)
 - Temperatura Ambiente (Ambient_Temperature)
-- Umidade Relativa Relative_Humidity)
+- Umidade Relativa (Relative_Humidity)
 
 # Imagens
 
