@@ -8,8 +8,8 @@ public class Attributes {
 
     /* --------------------------------------- EXHIBITION  -------------------------------------------- */
 
-    public static String getDataT1 = "";
-    public static String[] getDataT2 = {"","",""};
+    public static String getDataT1;
+    public static String[] getDataT2;
     public static SensorModel sensorModel;
 
     /* --------------------------------------- INFO SENSORS  -------------------------------------------- */
@@ -32,7 +32,7 @@ public class Attributes {
 
     public static int[] quantOutputsSensors = new int[]{3,3,3,1,1,1,1,3,1,3,1,1,1,1};
 
-    public static ArrayList<SensorModel> sensorsSupported = new ArrayList<SensorModel>();
+    public static ArrayList<SensorModel> sensorsSupported;
 
     /* -------------------------------- OTHERS ATTRIBUTES  -------------------------------------- */
 
@@ -49,12 +49,5 @@ public class Attributes {
     public static float timestampOld = System.nanoTime();
     public static float[] gravity = new float[]{0,0,0};
     public static float[] input = new float[]{0,0,0};
-
-    /* --------------------------------- ATTRIBUTES GYROSCOPE ----------------------------------- */
-
-    public static final float EPSILON = 0.000000001f;
-    private static final float NS2S = 1.0f / 1000000000.0f;
-    private final float[] deltaRotationVector = new float[4];
-    private float timestamp;
-
+    
 }
