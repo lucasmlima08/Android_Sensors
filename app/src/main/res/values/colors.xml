@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="pressed">#c9000000</color>
+    <color name="notPressed">#80000000</color>
+    <color name="margin">#00FBFBFF</color>
+
+</resources>
