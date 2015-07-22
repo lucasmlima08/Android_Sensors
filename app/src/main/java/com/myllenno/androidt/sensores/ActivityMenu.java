@@ -108,9 +108,9 @@ public class ActivityMenu extends Activity implements SensorEventListener, View.
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD){
-            Attributes.getDataT2[0] = "X: "+Attributes.formatT2.format(event.values[0])+" ?T";
-            Attributes.getDataT2[1] = "Y: "+Attributes.formatT2.format(event.values[1])+" ?T";
-            Attributes.getDataT2[2] = "Z: "+Attributes.formatT2.format(event.values[2])+" ?T";
+            Attributes.getDataT2[0] = "X: "+Attributes.formatT2.format(event.values[0])+" uT";
+            Attributes.getDataT2[1] = "Y: "+Attributes.formatT2.format(event.values[1])+" uT";
+            Attributes.getDataT2[2] = "Z: "+Attributes.formatT2.format(event.values[2])+" uT";
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_STEP_COUNTER){
@@ -120,7 +120,7 @@ public class ActivityMenu extends Activity implements SensorEventListener, View.
         else if ((event.sensor.getType() == Sensor.TYPE_PROXIMITY)||
             (event.sensor.getType() == Sensor.TYPE_SIGNIFICANT_MOTION)||
             (event.sensor.getType() == Sensor.TYPE_STEP_DETECTOR)){
-            if (event.values[0] >= 1.0f)
+            if ((int)event.values[0] >= 1)
                 Attributes.getDataT1 = getResources().getString(R.string.detect);
             else
                 Attributes.getDataT1 = getResources().getString(R.string.notDetect);
