@@ -24,5 +24,6 @@ mas ele lista apenas os sensores suportados pelo dispositivo.
 
 # Imagens
 
-<img src="https://github.com/lucasmlima08/Android_SensorsDroid/blob/master/imgMain.png" width="350" />
-<img src="https://github.com/lucasmlima08/Android_SensorsDroid/blob/master/imgMenu.png" width="350" />
+<img src="https://github.com/lucasmlima08/Android_SensorsDroid/blob/master/imgMain.png" width="230" />
+<img src="https://github.com/lucasmlima08/Android_SensorsDroid/blob/master/imgMenu.png" width="230" />
+<img src="https://github.com/lucasmlima08/SensorsDroid_Android/blob/master/imgSensor1.png" width="230" />
