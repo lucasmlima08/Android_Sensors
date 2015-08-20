@@ -1,0 +1,10 @@
+<resources>
+
+    <dimen name="titleScreen">40dp</dimen>
+    <dimen name="description">35dp</dimen>
+    <dimen name="values">70dp</dimen>
+
+    <dimen name="heightButtonMenu">110dp</dimen>
+    <dimen name="marginButtonMenu">5dp</dimen>
+    <dimen name="textButtonMenu">28dp</dimen>
+</resources>

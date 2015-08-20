@@ -3,6 +3,7 @@ package com.myllenno.androidt.sensores;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -10,9 +11,12 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
+import java.util.ArrayList;
 
 public class ActivityMenu extends Activity implements SensorEventListener, View.OnClickListener {
 
@@ -36,7 +40,7 @@ public class ActivityMenu extends Activity implements SensorEventListener, View.
         super.onDestroy();
         sensorManager.unregisterListener(this);
     }
-    
+
     //- Reset attributes of sensors.
     private void resetAttributes(){
         Attributes.sensorsSupported = new ArrayList<SensorModel>();
@@ -55,7 +59,7 @@ public class ActivityMenu extends Activity implements SensorEventListener, View.
                 sensorInfo = new SensorModel(Attributes.sensorsSupported.size(), // id.
                         getApplicationContext().getString(Attributes.nameSensors[i]), // name.
                         getApplicationContext().getString(Attributes.descriptionSensors[i]), // description.
-                        Attributes.quantOutputsSensors[i],sensor); // quantity output // sensor.
+                        Attributes.quantOutputsSensors[i],sensor); // quantity output. // sensor.
                 Attributes.sensorsSupported.add(sensorInfo);
             }
         }
@@ -74,6 +78,7 @@ public class ActivityMenu extends Activity implements SensorEventListener, View.
             button = new Button(new ContextThemeWrapper(this, R.style.buttonMenu));
             button.setId(Attributes.sensorsSupported.get(i).getId());
             button.setText(Attributes.sensorsSupported.get(i).getName());
+            button.setTextColor(Color.BLACK);
             button.setOnClickListener(this);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN )
                 button.setBackground(getResources().getDrawable(R.drawable.button_style));
@@ -102,9 +107,9 @@ public class ActivityMenu extends Activity implements SensorEventListener, View.
             Attributes.gravity[1] = Attributes.alpha * Attributes.gravity[1] + (1 - Attributes.alpha) * Attributes.input[1];
             Attributes.gravity[2] = Attributes.alpha * Attributes.gravity[2] + (1 - Attributes.alpha) * Attributes.input[2];
 
-            Attributes.getDataT2[0] = Attributes.formatT2.format(Attributes.input[0] - Attributes.gravity[0]) + " m/sÂ²";
-            Attributes.getDataT2[1] = Attributes.formatT2.format(Attributes.input[1] - Attributes.gravity[1]) + " m/sÂ²";
-            Attributes.getDataT2[2] = Attributes.formatT2.format(Attributes.input[2] - Attributes.gravity[2]) + " m/sÂ²";
+            Attributes.getDataT2[0] = Attributes.formatT2.format(Attributes.input[0] - Attributes.gravity[0]) + " m/s²";
+            Attributes.getDataT2[1] = Attributes.formatT2.format(Attributes.input[1] - Attributes.gravity[1]) + " m/s²";
+            Attributes.getDataT2[2] = Attributes.formatT2.format(Attributes.input[2] - Attributes.gravity[2]) + " m/s²";
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD){
@@ -117,19 +122,25 @@ public class ActivityMenu extends Activity implements SensorEventListener, View.
             Attributes.getDataT1 = Attributes.formatT1.format(event.values[0])+" "+getResources().getString(R.string.steps);
         }
 
-        else if ((event.sensor.getType() == Sensor.TYPE_PROXIMITY)||
-            (event.sensor.getType() == Sensor.TYPE_SIGNIFICANT_MOTION)||
-            (event.sensor.getType() == Sensor.TYPE_STEP_DETECTOR)){
-            if ((int)event.values[0] >= 1)
+        else if (event.sensor.getType() == Sensor.TYPE_PROXIMITY){
+            if ((int)event.values[0] > 0)
+                Attributes.getDataT1 = Attributes.formatT2.format(event.values[0])+" cm";
+            else
+                Attributes.getDataT1 = getResources().getString(R.string.notDetect);
+        }
+
+        else if ((event.sensor.getType() == Sensor.TYPE_SIGNIFICANT_MOTION)||
+                (event.sensor.getType() == Sensor.TYPE_STEP_DETECTOR)){
+            if ((int)event.values[0] > 0)
                 Attributes.getDataT1 = getResources().getString(R.string.detect);
             else
                 Attributes.getDataT1 = getResources().getString(R.string.notDetect);
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_GRAVITY){
-            Attributes.getDataT2[0] = "X: "+Attributes.formatT2.format(event.values[0])+" m/sÂ²";
-            Attributes.getDataT2[1] = "Y: "+Attributes.formatT2.format(event.values[1])+" m/sÂ²";
-            Attributes.getDataT2[2] = "Z: "+Attributes.formatT2.format(event.values[2])+" m/sÂ²";
+            Attributes.getDataT2[0] = "X: "+Attributes.formatT2.format(event.values[0])+" m/s²";
+            Attributes.getDataT2[1] = "Y: "+Attributes.formatT2.format(event.values[1])+" m/s²";
+            Attributes.getDataT2[2] = "Z: "+Attributes.formatT2.format(event.values[2])+" m/s²";
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_HEART_RATE){
@@ -137,13 +148,13 @@ public class ActivityMenu extends Activity implements SensorEventListener, View.
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER){
-            Attributes.getDataT2[0] = "X: "+Attributes.formatT1.format(event.values[0])+" m/sÂ²";
-            Attributes.getDataT2[1] = "Y: "+Attributes.formatT1.format(event.values[1])+" m/sÂ²";
-            Attributes.getDataT2[2] = "Z: "+Attributes.formatT1.format(event.values[2])+" m/sÂ²";
+            Attributes.getDataT2[0] = "X: "+Attributes.formatT1.format(event.values[0])+" m/s²";
+            Attributes.getDataT2[1] = "Y: "+Attributes.formatT1.format(event.values[1])+" m/s²";
+            Attributes.getDataT2[2] = "Z: "+Attributes.formatT1.format(event.values[2])+" m/s²";
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_LIGHT){
-            Attributes.getDataT1 = Attributes.formatT2.format(event.values[0]);
+            Attributes.getDataT1 = Attributes.formatT2.format(event.values[0])+" lux";
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_PRESSURE){
@@ -151,7 +162,7 @@ public class ActivityMenu extends Activity implements SensorEventListener, View.
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_AMBIENT_TEMPERATURE){
-            Attributes.getDataT1 = Attributes.formatT2.format(event.values[0])+"ÂºC";
+            Attributes.getDataT1 = Attributes.formatT2.format(event.values[0])+"ºC";
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_RELATIVE_HUMIDITY){

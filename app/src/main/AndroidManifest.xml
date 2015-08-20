@@ -5,22 +5,11 @@
     <!-- Permissão de sensor -->
     <uses-permission android:name="android.permission.BODY_SENSORS" />
 
-    <!-- Permissão de internet para usar o AdMod (banner) -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-        <!-- Permissão de Google Play para usar o AdMod (banner) -->
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>
-        <activity
-            android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
         <activity
             android:name=".ActivityMain"
             android:label="@string/app_name"

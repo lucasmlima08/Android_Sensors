@@ -32,7 +32,7 @@ public class Attributes {
 
     public static int[] quantOutputsSensors = new int[]{3,3,3,1,1,1,1,3,1,3,1,1,1,1};
 
-    public static ArrayList<SensorModel> sensorsSupported;
+    public static ArrayList<SensorModel> sensorsSupported = null;
 
     /* -------------------------------- OTHERS ATTRIBUTES  -------------------------------------- */
 
@@ -49,5 +49,5 @@ public class Attributes {
     public static float timestampOld = System.nanoTime();
     public static float[] gravity = new float[]{0,0,0};
     public static float[] input = new float[]{0,0,0};
-    
+
 }

@@ -6,7 +6,7 @@
     <style name="buttonMenu" parent="android:Widget.Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:textSize">@dimen/textButtonMenu</item>
-        <item name="android:textColor">#fffefffd</item>
+        <item name="android:textColor">#000000</item>
     </style>
 
 </resources>
