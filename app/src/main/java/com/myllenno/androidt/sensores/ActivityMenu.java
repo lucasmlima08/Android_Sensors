@@ -107,9 +107,9 @@ public class ActivityMenu extends Activity implements SensorEventListener, View.
             Attributes.gravity[1] = Attributes.alpha * Attributes.gravity[1] + (1 - Attributes.alpha) * Attributes.input[1];
             Attributes.gravity[2] = Attributes.alpha * Attributes.gravity[2] + (1 - Attributes.alpha) * Attributes.input[2];
 
-            Attributes.getDataT2[0] = Attributes.formatT2.format(Attributes.input[0] - Attributes.gravity[0]) + " m/s²";
-            Attributes.getDataT2[1] = Attributes.formatT2.format(Attributes.input[1] - Attributes.gravity[1]) + " m/s²";
-            Attributes.getDataT2[2] = Attributes.formatT2.format(Attributes.input[2] - Attributes.gravity[2]) + " m/s²";
+            Attributes.getDataT2[0] = Attributes.formatT2.format(Attributes.input[0] - Attributes.gravity[0]) + " m/sÂ²";
+            Attributes.getDataT2[1] = Attributes.formatT2.format(Attributes.input[1] - Attributes.gravity[1]) + " m/sÂ²";
+            Attributes.getDataT2[2] = Attributes.formatT2.format(Attributes.input[2] - Attributes.gravity[2]) + " m/sÂ²";
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD){
@@ -126,7 +126,7 @@ public class ActivityMenu extends Activity implements SensorEventListener, View.
             if ((int)event.values[0] > 0)
                 Attributes.getDataT1 = Attributes.formatT2.format(event.values[0])+" cm";
             else
-                Attributes.getDataT1 = getResources().getString(R.string.notDetect);
+                Attributes.getDataT1 = getResources().getString(R.string.detect);
         }
 
         else if ((event.sensor.getType() == Sensor.TYPE_SIGNIFICANT_MOTION)||
@@ -138,9 +138,9 @@ public class ActivityMenu extends Activity implements SensorEventListener, View.
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_GRAVITY){
-            Attributes.getDataT2[0] = "X: "+Attributes.formatT2.format(event.values[0])+" m/s²";
-            Attributes.getDataT2[1] = "Y: "+Attributes.formatT2.format(event.values[1])+" m/s²";
-            Attributes.getDataT2[2] = "Z: "+Attributes.formatT2.format(event.values[2])+" m/s²";
+            Attributes.getDataT2[0] = "X: "+Attributes.formatT2.format(event.values[0])+" m/sÂ²";
+            Attributes.getDataT2[1] = "Y: "+Attributes.formatT2.format(event.values[1])+" m/sÂ²";
+            Attributes.getDataT2[2] = "Z: "+Attributes.formatT2.format(event.values[2])+" m/sÂ²";
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_HEART_RATE){
@@ -148,9 +148,9 @@ public class ActivityMenu extends Activity implements SensorEventListener, View.
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER){
-            Attributes.getDataT2[0] = "X: "+Attributes.formatT1.format(event.values[0])+" m/s²";
-            Attributes.getDataT2[1] = "Y: "+Attributes.formatT1.format(event.values[1])+" m/s²";
-            Attributes.getDataT2[2] = "Z: "+Attributes.formatT1.format(event.values[2])+" m/s²";
+            Attributes.getDataT2[0] = "X: "+Attributes.formatT1.format(event.values[0])+" m/sÂ²";
+            Attributes.getDataT2[1] = "Y: "+Attributes.formatT1.format(event.values[1])+" m/sÂ²";
+            Attributes.getDataT2[2] = "Z: "+Attributes.formatT1.format(event.values[2])+" m/sÂ²";
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_LIGHT){
@@ -162,7 +162,7 @@ public class ActivityMenu extends Activity implements SensorEventListener, View.
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_AMBIENT_TEMPERATURE){
-            Attributes.getDataT1 = Attributes.formatT2.format(event.values[0])+"ºC";
+            Attributes.getDataT1 = Attributes.formatT2.format(event.values[0])+"ÂºC";
         }
 
         else if (event.sensor.getType() == Sensor.TYPE_RELATIVE_HUMIDITY){
